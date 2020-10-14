@@ -1,0 +1,121 @@
+@require 'variables.styl'
+@require 'animated.styl'
+@require 'magic-theme.styl'
+
+
+// ============================
+// scrollbar
+// ============================
+* {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.32);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+
+// ============================
+// html, body
+// ============================
+html, body {
+  margin: 0;
+  padding: 0;
+  color: var(--normal-text-color);
+  if (hexo-config('magic.enable') == true) {
+    background: var(--magic-background-color);
+  } else {
+    background: var(--background-color);
+  }
+
+  font-family: $default-font-family;
+  font-weight: $default-font-weight;
+  font-size: $default-font-size;
+  line-height: $default-font-line-height;
+
+  +ils-tablet() {
+    font-size: 0.99em;
+    line-height: $default-font-line-height - 2px;
+  }
+
+  +ils-mobile() {
+    font-size: 0.98em;
+    line-height: $default-font-line-height - 4px;
+  }
+
+}
+
+
+
+// ============================
+// selection
+// ============================
+::selection {
+  background: var(--selection-color);
+  color: #fff;
+}
+
+
+// ============================
+// ul, ol, li
+// ============================
+ul, ol, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+// ============================
+// a
+// ============================
+a {
+  text-decoration: none;
+  color: var(--normal-text-color);
+
+  &:hover, &:active {
+    color: var(--primary-color);
+  }
+
+}
+
+// ============================
+// button
+// ============================
+button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.btn {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  background: var(--background-color);
+
+  if (hexo-config('magic.enable') == true) {
+    magic-style(1.1, 1.1);
+  } else {
+    border: 1px solid var(--border-color);
+  }
+
+  &:hover {
+    transition();
+    color: var(--background-color);
+    background: var(--primary-color);
+  }
+}

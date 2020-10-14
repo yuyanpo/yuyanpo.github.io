@@ -1,0 +1,43 @@
+@require "animated.styl"
+
+magic-style(scaleX, scaleY) {
+
+  if (hexo-config('magic.enable') == true) {
+
+    box-shadow: 0 0 2px var(--border-color);
+    transition();
+
+    &:hover {
+
+      transition();
+
+      if (hexo-config('magic.scale')) {
+        transform: scaleX(scaleX) scaleY(scaleY);
+      }
+
+      if (hexo-config('magic.shadow')) {
+        box-shadow: 0 0 8px var(--border-color);
+      }
+    }
+
+  }
+
+}
+
+magic-container(scaleX, scaleY, padding) {
+
+  padding: padding;
+  border-radius: 4px;
+  magic-style(scaleX, scaleY);
+
+  +ils-tablet() {
+    padding: padding - 2px;
+    border-radius: 3px;
+  }
+
+  +ils-mobile() {
+    padding: padding - 4px;
+    border-radius: 2px;
+  }
+
+}

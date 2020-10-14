@@ -1,0 +1,44 @@
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa fa-calendar-o"></i> <%= date(articleObject.date, is_post() ? 'YYYY-MM-DD HH:mm:ss' : 'YYYY-MM-DD') %>
+    </span>
+    <% if (articleObject.categories.length) { %>
+        <span class="article-categories article-meta-item">
+            <i class="fa fa-folder"></i>
+            <ul>
+                <% articleObject.categories.forEach((category, i) => { %>
+                    <li>
+                        <%= i === 0 ? '' : '> ' %><a href="<%- url_for(category.path) %>"><%= category.name %></a>
+                    </li>
+                <% }); %>
+            </ul>
+        </span>
+    <% } %>
+    <% if (articleObject.tags.length) { %>
+        <span class="article-tags article-meta-item">
+            <i class="fa fa-tags"></i>
+            <ul>
+                <% articleObject.tags.forEach((tag, i) => { %>
+                    <li>
+                        <%= i === 0 ? '' : '| ' %><a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+                    </li>
+                <% }); %>
+            </ul>
+        </span>
+    <% } %>
+    <% if (theme.website_count.busuanzi_count.enable && theme.website_count.busuanzi_count.page_pv && is_post()) { %>
+        <span class="article-pv article-meta-item">
+            <i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
+        </span>
+    <% } %>
+    <% if(is_post() && theme.post_wordcount.enable && theme.post_wordcount.wordcount){ %>
+        <span class="article-wordcount article-meta-item">
+        <i class="fa fa-book"></i> <span><%= wordcount(page.content) %> <%- __('wordcount') %></span>
+        </span>
+    <% } %>
+    <% if(is_post() && theme.post_wordcount.enable && theme.post_wordcount.min2read){ %>
+        <span class="article-min2read article-meta-item">
+        <i class="fa fa-clock-o"></i> <span><%= min2read(page.content) %> <%- __('min2read') %></span>
+        </span>
+    <% } %>
+</div>

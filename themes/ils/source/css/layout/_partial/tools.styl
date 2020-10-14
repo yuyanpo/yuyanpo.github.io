@@ -1,0 +1,76 @@
+@require "../common/variables.styl";
+@require "../common/magic-theme.styl";
+@require "../common/magic-theme.styl";
+
+$li-border-radius = 5px;
+$li-margin-bottom = 12px;
+
+.tools-container {
+
+  .tools-list {
+    li {
+      cursor: pointer;
+      width: $tool-button-width;
+      height: $tool-button-width;
+      border-radius: $li-border-radius;
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: $li-margin-bottom;
+      background: var(--background-color);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      if (hexo-config('magic.enable') == true) {
+        magic-style(1.1, 1.1);
+      } else {
+        border: 1px solid var(--border-color);
+      }
+
+      &:hover {
+        transition();
+        color: var(--background-color);
+        background: var(--primary-color);
+      }
+
+      &.rss {
+
+        a {
+          border-radius: $li-border-radius;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+
+          &:hover {
+            transition();
+            color: var(--background-color);
+            background: var(--primary-color);
+          }
+        }
+      }
+
+
+      &.scroll-to-top {
+        display: none;
+        position: fixed;
+        right: $component-interspace;
+        bottom: $component-interspace;
+      }
+
+      &.page-aside-toggle {
+        display: none;
+
+        +ils-tablet() {
+          display: none !important;
+        }
+      }
+
+    }
+  }
+
+}

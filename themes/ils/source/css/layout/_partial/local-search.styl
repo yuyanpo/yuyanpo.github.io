@@ -1,0 +1,129 @@
+@require '../common/variables.styl'
+
+$icon-size = 1.2em;
+
+.search-pop-overlay {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: $z-index-8;
+}
+
+
+.search-popup {
+  background: var(--background-color);
+  border-radius: 2px;
+  height: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+  top: 10%;
+  width: 70%;
+
+  +ils-tablet() {
+    width: 80%;
+  }
+
+  +ils-mobile() {
+    width: 90%;
+  }
+
+  z-index: $z-index-6;
+
+  .search-icon, .popup-btn-close {
+    color: var(--normal-text-color);
+    font-size: $icon-size;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .popup-btn-close {
+    cursor: pointer;
+
+    &:hover .fa {
+      color: var(--first-text-color);
+    }
+  }
+
+  .search-header {
+    background: var(--fourth-text-color);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    display: flex;
+    padding: 10px;
+  }
+}
+
+
+input.search-input {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  width: 100%;
+  font-size: 1.2em;
+  color: var(--normal-text-color);
+
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+
+.search-popup {
+
+  .search-input-container {
+    flex-grow: 1;
+    padding: 2px;
+  }
+
+  ul.search-result-list {
+    margin: 10px 5px;
+    width: 100%;
+
+    li {
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 20px;
+
+      a {
+        display: block;
+        margin-bottom: 16px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  p.search-result {
+    margin 0
+    padding 0
+  }
+
+  a.search-result-title {
+    font-weight: bold;
+  }
+
+  .search-keyword {
+    border-bottom: 1px dashed var(--primary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+
+  #search-result {
+    display: flex;
+    height: calc(100% - 55px);
+    overflow: auto;
+    padding: 5px 25px;
+  }
+
+  #no-result {
+    color: var(--third-text-color);
+    margin: auto;
+  }
+}

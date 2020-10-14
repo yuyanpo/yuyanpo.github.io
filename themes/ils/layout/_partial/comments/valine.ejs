@@ -1,0 +1,39 @@
+<% if(
+        theme.comments.valine.enable
+        && theme.comments.valine.appid
+        && theme.comments.valine.appkey
+) { %>
+    <div class="valine-container">
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <div id="vcomments"></div>
+        <script>
+            new Valine({
+                el: '#vcomments',
+                appId: '<%= theme.comments.valine.appid %>',
+                appKey: '<%= theme.comments.valine.appkey %>',
+                meta: '<%= theme.comments.valine.meta %>'.split(','),
+                avatar: 'wavatar',
+                enableQQ: true,
+                placeholder: '<%= theme.comments.valine.placeholder %>',
+                lang: '<%= config.language %>'.toLowerCase()
+            });
+
+
+            // Valine 评论列表增加"作者"标识
+            const getValineDomTimer = setInterval(() => {
+                const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                if (vcards.length > 0) {
+                    for (let vcard of vcards) {
+                        const vnick = vcard.querySelector('.vhead .vnick');
+                        if (vnick.innerHTML.toLocaleLowerCase() === '<%= config.author %>'.toLocaleLowerCase()) {
+                            vcard.classList.add('author');
+                        }
+                    }
+                    clearInterval(getValineDomTimer);
+                } else {
+                    clearInterval(getValineDomTimer);
+                }
+            }, 2000);
+        </script>
+    </div>
+<% } %>
