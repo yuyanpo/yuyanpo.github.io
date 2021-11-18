@@ -167,12 +167,12 @@ donates:
     -
         type: alipay
         # Alipay qrcode image URL
-        qrcode: ''
+        qrcode: /img/wechat_qrcode.png
     # Wechat donate button configurations
     -
         type: wechat
         # Wechat qrcode image URL
-        qrcode: ''
+        qrcode: /img/wechat_qrcode.png
 # Share plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share/
 share:
@@ -308,7 +308,7 @@ plugins:
     # https://tongji.baidu.com
     baidu_analytics:
         # Baidu Analytics tracking ID
-        tracking_id: 
+        tracking_id: 'f46ae9c07ab505f1255f62f734bcc53b'
     # Bing Webmaster Tools plugin settings
     # https://www.bing.com/toolbox/webmaster/
     bing_webmaster:
