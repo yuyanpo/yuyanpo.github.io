@@ -1,6 +1,8 @@
 ---
 title: 多语言国际化简码
 date: 2020-10-11 10:12:25
+comment: false
+share: false
 tags: i18n
 ---
 
