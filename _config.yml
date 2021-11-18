@@ -8,12 +8,12 @@ subtitle: 'documents & articles'
 description: ''
 keywords: 'yyp,blog'
 author: YYP
-language: zh
+language: zh-CN
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com
+url: https://y.1371.org
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -98,7 +98,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: ils
+theme: icarus
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
