@@ -1,8 +1,7 @@
 ---
 title: 《流量池》读后感
 date: 2020-10-15 15:08:14
-comment: false
-share: false
+categories: 读书笔记
 tags: ['读书', '流量池']
 ---
 

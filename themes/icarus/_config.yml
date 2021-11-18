@@ -247,6 +247,7 @@ widgets:
         type: links
         # Names and URLs of the sites
         links:
+            闪芬奇: 'https://shanfenqi.com/'
             LOLM: 'https://lolm.qq.com/'
     # Categories widget configurations
     -

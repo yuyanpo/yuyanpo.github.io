@@ -101,7 +101,7 @@ module.exports = class extends Component {
                     {/* "Read more" button */}
                     {index && page.excerpt ? <a class="article-more button is-small is-size-7" href={`${url_for(page.link || page.path)}#more`}>{__('article.more')}</a> : null}
                     {/* Share button */}
-                    {!index ? <Share config={config} page={page} helper={helper} /> : null}
+                    {/* {!index ? <Share config={config} page={page} helper={helper} /> : null} */}
                 </article>
             </div>
             {/* Donate button */}
@@ -122,7 +122,7 @@ module.exports = class extends Component {
                 </div> : null}
             </nav> : null}
             {/* Comment */}
-            {!index ? <Comment config={config} page={page} helper={helper} /> : null}
+            {/* {!index ? <Comment config={config} page={page} helper={helper} /> : null} */}
         </Fragment>;
     }
 };
